@@ -3,14 +3,13 @@ import {increment, fetchPosts} from '../actions'
 import { connect } from 'react-redux'
 
 const App = ({count, posts, increment, fetchPosts}) => {
-console.log(posts)
 return <>
 <h1>Counter {count}</h1>
 <button onClick={increment}>+</button>
 
 <button onClick={fetchPosts}>Fetch Posts</button>
 <h1>Posts </h1>
-{posts.map((post) => <h1>{post.title}</h1>)}
+{ posts === undefined ? null : posts.map((post) => <h1>{post.title}</h1>)}
 </>
 }
 
